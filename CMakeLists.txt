@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.2)
+project( Cuda )
+enable_language(CUDA)
+find_package( OpenCV REQUIRED )
+add_executable(Sample sample.cu sample2.cu)
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+target_link_libraries( Sample ${OpenCV_LIBS} )
